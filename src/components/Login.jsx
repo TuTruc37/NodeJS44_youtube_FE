@@ -47,17 +47,20 @@ const Login = () => {
                 console.log(`email: ${email}, password: ${pass_word}`);
                 loginAsyncKeyAPI({ email, pass_word })
                   .then((result) => {
+                    console.log("get result API login: ", result);
+
                     // result gồm mesage và data (access token)
                     // tạo pop up thông báo login thành công
                     toast.success(result.message);
- 
+
                     // lưu access token trong local storage của brower
                     localStorage.setItem("LOGIN_USER", result.data);
                     // chuyển hướng sang trang chủ sau khi login thành công
                     navigate("/");
                   })
-                  .catch(() => {
-                    console.log("Error from API login");
+                  .catch((error) => {
+                    console.log("Error from API login", error);
+                    toast.error(error.response.data.message);
                   });
               }}
             >

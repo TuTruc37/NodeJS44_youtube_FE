@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { changePassAPI, forgotPassAPI } from "../utils/fetchFromAPI";
+import { changePassAPI, forgotPassAPI } from "../utils/fetchFromAPI.js";
 
 export default function ForgotPass() {
   const [step, setStep] = useState(0);
@@ -73,7 +73,7 @@ export default function ForgotPass() {
                       navigate("/login");
                     })
                     .catch((error) => {
-                      toast.error(`Change password failed: ${error}`);
+                      toast.error(`Change password failed`);
                     });
                 }}
               >
