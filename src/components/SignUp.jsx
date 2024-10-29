@@ -17,7 +17,7 @@ const SignUp = () => {
   const navigate = useNavigate();
   const handleQrScanConfirmation = () => {
     setIsQrScanned(true);
-    navigate("/login")
+    navigate("/login");
   };
 
   // anfn

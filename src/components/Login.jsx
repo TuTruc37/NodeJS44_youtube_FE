@@ -37,6 +37,14 @@ const Login = () => {
             </label>
             <input className="form-control" id="pass" />
           </div>
+            {/* code */}
+            <div className="col-md-3">
+            <label htmlFor="inputEmail4" className="form-label">
+              Code
+            </label>
+            <input className="form-control" id="code" />
+          </div>
+          {/* button */}
           <div className="col-12">
             <button
               type="button"
@@ -44,8 +52,9 @@ const Login = () => {
               onClick={() => {
                 let email = document.getElementById("email").value;
                 let pass_word = document.getElementById("pass").value;
+                let code = document.getElementById("code").value;
                 console.log(`email: ${email}, password: ${pass_word}`);
-                loginAsyncKeyAPI({ email, pass_word })
+                loginAsyncKeyAPI({ email, pass_word,code })
                   .then((result) => {
                     console.log("get result API login: ", result);
 
